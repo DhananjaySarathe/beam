@@ -50,7 +50,14 @@
         <span><strong>Intel Mac</strong><small>127 MB</small></span>
       </a>
     </div>
-    <p class="fine">Version 1.1.0 · free and open source · <a href="https://github.com/DhananjaySarathe/beam-file-transfer/releases">all releases</a> · <a href="#first">what to expect on first launch</a></p>
+    <div class="install">
+      <p><b>Quickest way to install:</b> open Terminal, paste this and press Return. It installs Beam and opens it, with no warning from macOS.</p>
+      <div class="term one" role="group" aria-label="Install command">
+        <button class="copy" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/DhananjaySarathe/beam-file-transfer/main/install.sh | bash"><svg width="18" height="18" aria-hidden="true"><use href="#i-copy"/></svg><span>Copy</span></button>
+        <pre><code><span class="p">$</span> curl -fsSL https://raw.githubusercontent.com/DhananjaySarathe/beam-file-transfer/main/install.sh | bash</code></pre>
+      </div>
+    </div>
+    <p class="fine">Version 1.1.0 · free and open source · <a href="https://github.com/DhananjaySarathe/beam-file-transfer/releases">all releases</a> · <a href="#first">seeing "Beam" Not Opened?</a></p>
   </div>
 
   <figure class="stage" aria-label="Beam on a Mac asking to accept two files sent from a phone, and the phone showing them as sent">
@@ -127,12 +134,27 @@
 </section>
 
 <section id="first" class="notes wrap">
-  <h2>Good to know before the first launch</h2>
-  <div class="note-grid">
-    <div>
-      <h3>"Apple could not verify Beam"</h3>
-      <p>Beam is not signed with a paid Apple developer certificate. Open <b>System Settings → Privacy &amp; Security</b>, find the line about Beam and choose <b>Open Anyway</b>. After that it opens like any other app.</p>
+  <h2>Seeing "Beam" Not Opened?</h2>
+  <p class="lede">That is macOS blocking an app downloaded in a browser that is not signed with a paid Apple developer certificate. Beam is fine. Fix it once, either way:</p>
+  <div class="fix-grid">
+    <div class="fix">
+      <h3>In System Settings</h3>
+      <ol>
+        <li>On the warning, click <b>Done</b>. Not "Move to Bin".</li>
+        <li>Open <b>System Settings → Privacy &amp; Security</b> and scroll down.</li>
+        <li>Next to "Beam was blocked to protect your Mac", click <b>Open Anyway</b> and confirm.</li>
+      </ol>
     </div>
+    <div class="fix">
+      <h3>Or in Terminal</h3>
+      <p>Paste this, press Return, then open Beam again.</p>
+      <div class="term one" role="group" aria-label="Command that unblocks Beam">
+        <button class="copy" type="button" data-copy="xattr -dr com.apple.quarantine /Applications/Beam.app"><svg width="18" height="18" aria-hidden="true"><use href="#i-copy"/></svg><span>Copy</span></button>
+        <pre><code><span class="p">$</span> xattr -dr com.apple.quarantine /Applications/Beam.app</code></pre>
+      </div>
+    </div>
+  </div>
+  <div class="note-grid two">
     <div>
       <h3>"Accept incoming connections?"</h3>
       <p>Choose <b>Allow</b>. This is what lets your phone reach the Mac. Without it the page will not load on other devices.</p>
