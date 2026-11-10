@@ -30,6 +30,7 @@
   </a>
   <nav aria-label="Site">
     <a href="#how">How it works</a>
+    <a href="#first">Good to know</a>
     <a href="#source">Run the code</a>
     <a class="gh" href="https://github.com/DhananjaySarathe/beam-file-transfer"><svg width="20" height="20" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
   </nav>
@@ -41,23 +42,26 @@
   <div class="hero-copy">
     <h1>Send files between your devices. <span class="mark">No cloud in the middle.</span></h1>
     <p class="lede">Beam is a free Mac app. Your phone, tablet or other laptop just opens a web page on the same Wi-Fi, and files go straight across. No account, no cable, no upload to anyone's server.</p>
-    <div class="cta">
-      <a class="btn primary" href="https://github.com/DhananjaySarathe/beam-file-transfer/releases/download/v1.1.0/Beam-1.1.0-arm64.dmg">
-        <svg width="22" height="22" aria-hidden="true"><use href="#i-down"/></svg>
-        <span><strong>Download for Mac</strong><small>Apple Silicon, M1 and later · 120 MB</small></span>
-      </a>
-      <a class="btn" href="https://github.com/DhananjaySarathe/beam-file-transfer/releases/download/v1.1.0/Beam-1.1.0-x64.dmg">
-        <span><strong>Intel Mac</strong><small>127 MB</small></span>
-      </a>
-    </div>
     <div class="install">
-      <p><b>Quickest way to install:</b> open Terminal, paste this and press Return. It installs Beam and opens it, with no warning from macOS.</p>
+      <h2 class="install-title">Install it with one line</h2>
+      <ol class="install-steps">
+        <li>Open <b>Terminal</b> on your Mac (press <kbd>⌘</kbd> <kbd>Space</kbd>, type "Terminal", press Return).</li>
+        <li>Paste this line and press Return.</li>
+      </ol>
       <div class="term one" role="group" aria-label="Install command">
         <button class="copy" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/DhananjaySarathe/beam-file-transfer/main/install.sh | bash"><svg width="18" height="18" aria-hidden="true"><use href="#i-copy"/></svg><span>Copy</span></button>
         <pre><code><span class="p">$</span> curl -fsSL https://raw.githubusercontent.com/DhananjaySarathe/beam-file-transfer/main/install.sh | bash</code></pre>
       </div>
+      <p class="fine">Beam lands in Applications and opens, with no warning from macOS. Free and open source; <a href="https://github.com/DhananjaySarathe/beam-file-transfer/blob/main/install.sh">read the script</a> before you run it if you like.</p>
     </div>
-    <p class="fine">Version 1.1.0 · free and open source · <a href="https://github.com/DhananjaySarathe/beam-file-transfer/releases">all releases</a> · <a href="#first">seeing "Beam" Not Opened?</a></p>
+    <div class="alt">
+      <p class="fine"><b>Rather click a download?</b> It works too, but macOS blocks a browser download the first time. <a href="#blocked">The fix takes a minute.</a></p>
+      <div class="cta">
+        <a class="btn small" href="https://github.com/DhananjaySarathe/beam-file-transfer/releases/download/v1.1.0/Beam-1.1.0-arm64.dmg"><svg width="18" height="18" aria-hidden="true"><use href="#i-down"/></svg><span><strong>Apple Silicon</strong><small>M1 and later · 120 MB</small></span></a>
+        <a class="btn small" href="https://github.com/DhananjaySarathe/beam-file-transfer/releases/download/v1.1.0/Beam-1.1.0-x64.dmg"><svg width="18" height="18" aria-hidden="true"><use href="#i-down"/></svg><span><strong>Intel Mac</strong><small>127 MB</small></span></a>
+      </div>
+      <p class="fine">Version 1.1.0 · <a href="https://github.com/DhananjaySarathe/beam-file-transfer/releases">all releases</a></p>
+    </div>
   </div>
 
   <figure class="stage" aria-label="Beam on a Mac asking to accept two files sent from a phone, and the phone showing them as sent">
@@ -134,34 +138,39 @@
 </section>
 
 <section id="first" class="notes wrap">
-  <h2>Seeing "Beam" Not Opened?</h2>
-  <p class="lede">That is macOS blocking an app downloaded in a browser that is not signed with a paid Apple developer certificate. Beam is fine. Fix it once, either way:</p>
-  <div class="fix-grid">
-    <div class="fix">
-      <h3>In System Settings</h3>
-      <ol>
-        <li>On the warning, click <b>Done</b>. Not "Move to Bin".</li>
-        <li>Open <b>System Settings → Privacy &amp; Security</b> and scroll down.</li>
-        <li>Next to "Beam was blocked to protect your Mac", click <b>Open Anyway</b> and confirm.</li>
-      </ol>
-    </div>
-    <div class="fix">
-      <h3>Or in Terminal</h3>
-      <p>Paste this, press Return, then open Beam again.</p>
-      <div class="term one" role="group" aria-label="Command that unblocks Beam">
-        <button class="copy" type="button" data-copy="xattr -dr com.apple.quarantine /Applications/Beam.app"><svg width="18" height="18" aria-hidden="true"><use href="#i-copy"/></svg><span>Copy</span></button>
-        <pre><code><span class="p">$</span> xattr -dr com.apple.quarantine /Applications/Beam.app</code></pre>
+  <h2>Good to know before you install</h2>
+  <dl class="know">
+    <div><dt>What you need</dt><dd>A Mac on macOS 13 (Ventura) or later, Apple Silicon or Intel. Your other devices need only a browser and the same Wi-Fi.</dd></div>
+    <div><dt>One question from macOS</dt><dd>"Accept incoming connections?" Choose <b>Allow</b>. That is what lets your phone reach the Mac; without it the page will not load there.</dd></div>
+    <div><dt>Where files land</dt><dd>In the Downloads folder of the device that receives them. Nothing is kept on the Mac in between.</dd></div>
+    <div><dt>Stopping it</dt><dd>Close Beam's window. That quits the app and nothing stays running in the background.</dd></div>
+    <div><dt>Updating</dt><dd>Run the same install line again. It replaces Beam with the latest version.</dd></div>
+    <div><dt>Removing it</dt><dd>Drag Beam from Applications to the Bin. Its small settings folder is <code>~/Library/Application Support/Beam</code>.</dd></div>
+    <div><dt>Use a network you trust</dt><dd>Beam talks plain HTTP inside your Wi-Fi, so anyone on it can open the page and offer you a file. Nothing arrives unless you accept. Best at home, not on public Wi-Fi.</dd></div>
+    <div><dt>Not on a Mac?</dt><dd>Windows and Linux can run Beam <a href="#source">from the source</a> with Node.js. The app and the install line are for Macs.</dd></div>
+    <div><dt>Still early</dt><dd>Tested end to end on an Apple Silicon Mac with Chrome. The Intel build has not been run on an Intel Mac yet; <a href="https://github.com/DhananjaySarathe/beam-file-transfer/issues">tell us</a> if it misbehaves.</dd></div>
+  </dl>
+
+  <div id="blocked" class="blocked">
+    <h2>Downloaded it and see "Beam" Not Opened?</h2>
+    <p class="lede">macOS blocks apps downloaded in a browser that are not signed with a paid Apple developer certificate. Beam is fine. The install line above avoids this; if you already used the Download button, fix it once, either way:</p>
+    <div class="fix-grid">
+      <div class="fix">
+        <h3>In System Settings</h3>
+        <ol>
+          <li>On the warning, click <b>Done</b>. Not "Move to Bin".</li>
+          <li>Open <b>System Settings → Privacy &amp; Security</b> and scroll down.</li>
+          <li>Next to "Beam was blocked to protect your Mac", click <b>Open Anyway</b> and confirm.</li>
+        </ol>
       </div>
-    </div>
-  </div>
-  <div class="note-grid two">
-    <div>
-      <h3>"Accept incoming connections?"</h3>
-      <p>Choose <b>Allow</b>. This is what lets your phone reach the Mac. Without it the page will not load on other devices.</p>
-    </div>
-    <div>
-      <h3>Use it on a network you trust</h3>
-      <p>Beam talks plain HTTP inside your Wi-Fi, so anyone on that network can open the page and offer you a file. Use it at home, and close the window when you are done: that stops it.</p>
+      <div class="fix">
+        <h3>Or in Terminal</h3>
+        <p>Paste this, press Return, then open Beam again.</p>
+        <div class="term one" role="group" aria-label="Command that unblocks Beam">
+          <button class="copy" type="button" data-copy="xattr -dr com.apple.quarantine /Applications/Beam.app"><svg width="18" height="18" aria-hidden="true"><use href="#i-copy"/></svg><span>Copy</span></button>
+          <pre><code><span class="p">$</span> xattr -dr com.apple.quarantine /Applications/Beam.app</code></pre>
+        </div>
+      </div>
     </div>
   </div>
 </section>
