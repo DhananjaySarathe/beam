@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beam: send files between your devices</title>
+<meta name="description" content="Beam sends files, text and links between your phone, tablet and computer over your own Wi-Fi. A free Mac app; every other device just opens a web page.">
+<meta name="color-scheme" content="light">
+<meta property="og:url" content="https://dhananjaysarathe.github.io/beam/">
+<meta property="og:title" content="Beam: send files between your devices">
+<meta property="og:description" content="A free Mac app. Every other device just opens a web page. No cloud, no account, no cable.">
+<meta property="og:image" content="https://dhananjaysarathe.github.io/beam/assets/shot-mac-offer.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/SchibstedGrotesk-800.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" hidden>
+  <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 4v12m0 0-5-5m5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 9h10v11H9zM5 15V4h10"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+</svg>
+
+<header class="top wrap">
+  <a class="brand" href="#top" aria-label="Beam, top of page">
+    <svg viewBox="0 0 32 32" width="36" height="36" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#18180f"/><path d="M10.5 21.5 21.5 10.5M13 10.5h8.5V19" fill="none" stroke="#f5a400" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Beam</span>
+  </a>
+  <nav aria-label="Site">
+    <a href="#how">How it works</a>
+    <a href="#source">Run the code</a>
+    <a class="gh" href="https://github.com/DhananjaySarathe/beam-file-transfer"><svg width="20" height="20" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<section class="hero wrap">
+  <div class="hero-copy">
+    <h1>Send files between your devices. <span class="mark">No cloud in the middle.</span></h1>
+    <p class="lede">Beam is a free Mac app. Your phone, tablet or other laptop just opens a web page on the same Wi-Fi, and files go straight across. No account, no cable, no upload to anyone's server.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/DhananjaySarathe/beam-file-transfer/releases/download/v1.1.0/Beam-1.1.0-arm64.dmg">
+        <svg width="22" height="22" aria-hidden="true"><use href="#i-down"/></svg>
+        <span><strong>Download for Mac</strong><small>Apple Silicon, M1 and later · 120 MB</small></span>
+      </a>
+      <a class="btn" href="https://github.com/DhananjaySarathe/beam-file-transfer/releases/download/v1.1.0/Beam-1.1.0-x64.dmg">
+        <span><strong>Intel Mac</strong><small>127 MB</small></span>
+      </a>
+    </div>
+    <p class="fine">Version 1.1.0 · free and open source · <a href="https://github.com/DhananjaySarathe/beam-file-transfer/releases">all releases</a> · <a href="#first">what to expect on first launch</a></p>
+  </div>
+
+  <figure class="stage" aria-label="Beam on a Mac asking to accept two files sent from a phone, and the phone showing them as sent">
+    <div class="screen mac"><img src="assets/shot-mac-offer.png" width="2240" height="1400" alt="Beam on a Mac: Pixel 8 wants to send you 2 files, Goa trip.mp4 and IMG_2041.jpg, with Decline and Accept buttons"></div>
+    <div class="screen phone"><img src="assets/shot-phone-done.png" width="780" height="1520" alt="Beam on a phone showing 2 files sent to MacBook Air"></div>
+  </figure>
+</section>
+
+<section id="how" class="how wrap">
+  <h2>Three taps, and it's on the other device</h2>
+  <ol class="steps">
+    <li>
+      <div class="step-copy">
+        <span class="num" aria-hidden="true">1</span>
+        <h3>Open Beam on your Mac</h3>
+        <p>It shows an address and a QR code under "Add a device". That is all the setup there is.</p>
+      </div>
+      <div class="screen mac"><img loading="lazy" src="assets/shot-mac-devices.png" width="2240" height="1400" alt="Beam's main screen on a Mac with one device, Pixel 8, and an Add a device card"></div>
+    </li>
+    <li>
+      <div class="step-copy">
+        <span class="num" aria-hidden="true">2</span>
+        <h3>Scan the code with your phone</h3>
+        <p>The page opens in the phone's browser. Nothing to install. Tap the Mac, then choose files, or paste a link or a note.</p>
+      </div>
+      <div class="screen phone"><img loading="lazy" src="assets/shot-phone-send.png" width="780" height="1520" alt="Beam on a phone: Send to MacBook Air, with Choose files and a box for text or a link"></div>
+    </li>
+    <li>
+      <div class="step-copy">
+        <span class="num" aria-hidden="true">3</span>
+        <h3>Accept on the other side</h3>
+        <p>Nothing arrives until you say yes. Files land in Downloads, one after another, and either side can cancel.</p>
+      </div>
+      <div class="screen mac"><img loading="lazy" src="assets/shot-mac-done.png" width="2240" height="1400" alt="Beam on the Mac after the transfer: 2 files from Pixel 8, saved to your downloads"></div>
+    </li>
+  </ol>
+</section>
+
+<section class="route">
+  <div class="wrap route-grid">
+    <div>
+      <h2>Where your file goes</h2>
+      <p class="lede">From one device, through the Mac running Beam, to the other. It is passed along as it arrives and never written to disk on the way, so nothing is left behind and nothing leaves your network.</p>
+    </div>
+
+    <svg class="relay" viewBox="0 0 640 250" role="img" aria-label="A file travels from a phone, through the Mac running Beam, to a laptop. The Mac stores nothing.">
+      <path id="wire" class="wire" d="M92 118 C 170 40, 250 40, 320 104 S 470 176, 548 118"/>
+      <g class="dev">
+        <rect x="62" y="74" width="60" height="104" rx="13"/><path d="M82 164h20"/>
+        <text x="92" y="208">Your phone</text>
+      </g>
+      <g class="dev hub">
+        <rect x="262" y="66" width="116" height="78" rx="10"/><path d="M244 156h152"/>
+        <path class="logo" d="M308 118 332 94M314 94h18v18"/>
+        <text x="320" y="190">Mac running Beam</text>
+        <text class="sub" x="320" y="210">passes it along, keeps nothing</text>
+      </g>
+      <g class="dev">
+        <rect x="498" y="82" width="100" height="66" rx="9"/><path d="M484 160h128"/>
+        <text x="548" y="194">Another device</text>
+      </g>
+      <g class="parcel">
+        <path d="M-9 -12h11l7 7v17h-18z"/><path class="fold" d="M2 -12v7h7"/>
+      </g>
+    </svg>
+
+    <dl class="facts">
+      <div><dt>No account</dt><dd>No sign-up and no analytics. Device names are random and stay in your browser.</dd></div>
+      <div><dt>No size cap</dt><dd>Files stream instead of being buffered, so the limit is your devices, not Beam.</dd></div>
+      <div><dt>Any device with a browser</dt><dd>Android, iPhone, Windows, Linux. Only the Mac needs the app.</dd></div>
+      <div><dt>Text and links too</dt><dd>Paste a link on one screen and copy it on the other.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="first" class="notes wrap">
+  <h2>Good to know before the first launch</h2>
+  <div class="note-grid">
+    <div>
+      <h3>"Apple could not verify Beam"</h3>
+      <p>Beam is not signed with a paid Apple developer certificate. Open <b>System Settings → Privacy &amp; Security</b>, find the line about Beam and choose <b>Open Anyway</b>. After that it opens like any other app.</p>
+    </div>
+    <div>
+      <h3>"Accept incoming connections?"</h3>
+      <p>Choose <b>Allow</b>. This is what lets your phone reach the Mac. Without it the page will not load on other devices.</p>
+    </div>
+    <div>
+      <h3>Use it on a network you trust</h3>
+      <p>Beam talks plain HTTP inside your Wi-Fi, so anyone on that network can open the page and offer you a file. Use it at home, and close the window when you are done: that stops it.</p>
+    </div>
+  </div>
+</section>
+
+<section id="source" class="source wrap">
+  <div>
+    <h2>Rather run the code?</h2>
+    <p class="lede">Beam is one small server with no dependencies. On any computer with <a href="https://nodejs.org">Node.js</a> 20 or newer, three commands start it, and the terminal prints the address and QR code.</p>
+    <a class="btn" href="https://github.com/DhananjaySarathe/beam-file-transfer"><svg width="20" height="20" aria-hidden="true"><use href="#i-github"/></svg><span><strong>View the source on GitHub</strong></span></a>
+  </div>
+  <div class="term" role="group" aria-label="Commands to run Beam from source">
+    <button class="copy" type="button" data-copy="git clone https://github.com/DhananjaySarathe/beam-file-transfer.git&#10;cd beam-file-transfer&#10;npm start"><svg width="18" height="18" aria-hidden="true"><use href="#i-copy"/></svg><span>Copy</span></button>
+    <pre><code><span class="p">$</span> git clone https://github.com/DhananjaySarathe/beam-file-transfer.git
+<span class="p">$</span> cd beam-file-transfer
+<span class="p">$</span> npm start
+
+  Beam is running
+
+  This computer   http://localhost:3210
+  Other devices   the address on your Wi-Fi, with a QR code</code></pre>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot wrap">
+  <p>Beam is free under the MIT licence.</p>
+  <p><a href="https://github.com/DhananjaySarathe/beam-file-transfer">GitHub</a> · <a href="https://github.com/DhananjaySarathe/beam-file-transfer/releases">Releases</a> · <a href="https://github.com/DhananjaySarathe/beam-file-transfer/issues">Report a problem</a></p>
+</footer>
+
+<script>
+  for (const b of document.querySelectorAll('.copy')) {
+    b.addEventListener('click', async () => {
+      const label = b.querySelector('span'), icon = b.querySelector('use');
+      try {
+        await navigator.clipboard.writeText(b.dataset.copy);
+        label.textContent = 'Copied'; icon.setAttribute('href', '#i-check');
+      } catch {
+        label.textContent = 'Select and copy';
+      }
+      setTimeout(() => { label.textContent = 'Copy'; icon.setAttribute('href', '#i-copy'); }, 1800);
+    });
+  }
+</script>
+</body>
+</html>
